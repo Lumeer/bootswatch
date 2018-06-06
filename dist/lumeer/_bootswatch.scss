@@ -51,7 +51,6 @@ body {
   font-style: italic;
   font-weight: bold;
   color: $gray-600;
-
 }
 
 .text-attribute.bg-dark {
@@ -132,18 +131,25 @@ body {
 
 // Forms =======================================================================
 
-input, .form-control, .custom-control-input, input, textarea, select {
+input, .form-control, .custom-control-input, input, textarea, select, .custom-file-input {
 
   &:focus, &:active {
     box-shadow: none !important;
   }
 }
 
-.custom-control-label::before, .custom-control-label::after, .form-control {
+.form-control, .custom-file-label {
   box-shadow: none !important;
 }
 
-input::placeholder {
+.custom-control-label {
+  &::before, &::after {
+    box-shadow: none !important;
+  }
+}
+
+
+input::placeholder, .custom-file-label {
   font-style: italic;
 }
 
@@ -152,30 +158,43 @@ input, textarea, select {
 }
 
 div[contenteditable="true"].form-control {
-  padding: 0.25rem;
   color: $secondary;
   outline: 0;
-  border: 1px solid transparent;
+
+  &:not(.frame) {
+    border: 1px solid transparent;
+
+  }
+
+  &:not(.frame):not(.user) {
+   // padding: 0.25rem;
+
+    &::before {
+      font-family: FontAwesome;
+      content: "\f040";
+      font-style: normal;
+      font-weight: normal;
+      padding-right: 0.25rem;
+      color: $primary;
+      font-size: 75%;
+    }
+  }
 
   transition:border .15s ease-in;
 
   &.placeholder {
     font-style: italic;
-    color: $gray-700;
+    color: $gray-600;
   }
 
-  &:active, &:focus {
+  &:active, &:focus, &.user:hover {
     border: 1px solid $gray-400;
   }
 
-  &::before {
-    font-family: FontAwesome;
-    content: "\f040";
-    font-style: normal;
-    font-weight: normal;
-    padding-right: 0.25rem;
-    color: $primary;
-    font-size: 75%;
+  &.user.attribute {
+    font-style: italic;
+    font-weight: bold;
+    color: $gray-600;
   }
 }
 
@@ -189,6 +208,12 @@ div[contenteditable="true"].form-control {
   .nav-item.open .nav-link:focus,
   .nav-item.open .nav-link:hover {
     color: $primary;
+  }
+}
+
+.nav-link {
+  &:focus, &:active {
+    outline: 0;
   }
 }
 

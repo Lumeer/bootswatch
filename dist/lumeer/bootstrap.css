@@ -9534,29 +9534,34 @@ body {
   background-color: #e08e0b;
 }
 
-input:focus, input:active, .form-control:focus, .form-control:active, .custom-control-input:focus, .custom-control-input:active, input:focus, input:active, textarea:focus, textarea:active, select:focus, select:active {
+input:focus, input:active, .form-control:focus, .form-control:active, .custom-control-input:focus, .custom-control-input:active, input:focus, input:active, textarea:focus, textarea:active, select:focus, select:active, .custom-file-input:focus, .custom-file-input:active {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
 
-.custom-control-label::before, .custom-control-label::after, .form-control {
+.form-control, .custom-file-label {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
 
-input::-webkit-input-placeholder {
+.custom-control-label::before, .custom-control-label::after {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+input::-webkit-input-placeholder, .custom-file-label {
   font-style: italic;
 }
 
-input:-ms-input-placeholder {
+input:-ms-input-placeholder, .custom-file-label {
   font-style: italic;
 }
 
-input::-ms-input-placeholder {
+input::-ms-input-placeholder, .custom-file-label {
   font-style: italic;
 }
 
-input::placeholder {
+input::placeholder, .custom-file-label {
   font-style: italic;
 }
 
@@ -9565,24 +9570,17 @@ input, textarea, select {
 }
 
 div[contenteditable="true"].form-control {
-  padding: 0.25rem;
   color: #2C3E50;
   outline: 0;
-  border: 1px solid transparent;
   -webkit-transition: border .15s ease-in;
   transition: border .15s ease-in;
 }
 
-div[contenteditable="true"].form-control.placeholder {
-  font-style: italic;
-  color: #7b8a8b;
+div[contenteditable="true"].form-control:not(.frame) {
+  border: 1px solid transparent;
 }
 
-div[contenteditable="true"].form-control:active, div[contenteditable="true"].form-control:focus {
-  border: 1px solid #ced4da;
-}
-
-div[contenteditable="true"].form-control::before {
+div[contenteditable="true"].form-control:not(.frame):not(.user)::before {
   font-family: FontAwesome;
   content: "\f040";
   font-style: normal;
@@ -9592,6 +9590,21 @@ div[contenteditable="true"].form-control::before {
   font-size: 75%;
 }
 
+div[contenteditable="true"].form-control.placeholder {
+  font-style: italic;
+  color: #95a5a6;
+}
+
+div[contenteditable="true"].form-control:active, div[contenteditable="true"].form-control:focus, div[contenteditable="true"].form-control.user:hover {
+  border: 1px solid #ced4da;
+}
+
+div[contenteditable="true"].form-control.user.attribute {
+  font-style: italic;
+  font-weight: bold;
+  color: #95a5a6;
+}
+
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link.active:focus,
 .nav-tabs .nav-link.active:hover,
@@ -9599,6 +9612,10 @@ div[contenteditable="true"].form-control::before {
 .nav-tabs .nav-item.open .nav-link:focus,
 .nav-tabs .nav-item.open .nav-link:hover {
   color: #18BC9C;
+}
+
+.nav-link:focus, .nav-link:active {
+  outline: 0;
 }
 
 .pagination a:hover {
