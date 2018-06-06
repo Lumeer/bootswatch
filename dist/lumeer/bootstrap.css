@@ -9462,6 +9462,20 @@ body {
   color: #18BC9C !important;
 }
 
+.navbar-triangle .nav-link {
+  display: block;
+  padding: 15px !important;
+  background: url("../../_assets/img/crumbs.gif") no-repeat right center;
+}
+
+.navbar-triangle .nav-item {
+  background: #fff !important;
+}
+
+.navbar-triangle .nav-item:last-child .nav-link {
+  background: #fff !important;
+}
+
 .btn:focus, .btn:active, .focus {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -9484,6 +9498,10 @@ body {
 
 .bg-dark > .text-attribute {
   color: #dee2e6;
+}
+
+.dropdown-item:hover .text-primary {
+  color: #fff !important;
 }
 
 .table .thead-dark th {

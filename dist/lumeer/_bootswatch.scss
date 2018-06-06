@@ -30,6 +30,25 @@ body {
   }
 }
 
+.navbar-triangle {
+
+  .nav-link {
+    display: block;
+    padding: 15px !important;
+    background:url('../../_assets/img/crumbs.gif') no-repeat right center;
+  }
+
+
+  .nav-item {
+    background: $white !important;
+  }
+
+  .nav-item:last-child .nav-link {
+    background: $white !important;
+    //background: url('../../_assets/img/crumbs-end.gif') no-repeat right center !important;
+  }
+}
+
 // Buttons =====================================================================
 
 .btn:focus, .btn:active, .focus {
@@ -59,6 +78,10 @@ body {
 }
 .bg-dark > .text-attribute {
   color: $gray-300;
+}
+
+.dropdown-item:hover .text-primary {
+  color: $white !important;
 }
 
 // Tables ======================================================================
