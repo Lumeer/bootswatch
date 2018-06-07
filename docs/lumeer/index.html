@@ -227,7 +227,7 @@
             </div>
 
             <div class="bs-component">
-              <nav class="navbar navbar-expand-lg navbar-light bg-white py-0">
+              <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 d-flex">
                 <a class="navbar-brand" href="#">
                   <img src="../../_assets/img/lumeer-logo.png" height="42px" alt="Logo Lumeer">
                 </a>
@@ -236,7 +236,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor03">
-                  <ul class="navbar-nav navbar-triangle mr-auto">
+                  <ul class="navbar-nav navbar-triangle mr-3">
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-crow" style="color: #ccab1f;"></i>&nbsp;MRVNC
@@ -280,8 +280,17 @@
                       </div>
                     </li>
                   </ul>
-                  <form class="form-inline">
-                    <span class="bagde badge-danger badge-pill mr-3">Running on the Free Plan</span>
+
+                  <div class="input-group input-group-lg flex-fill mr-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id=""><i class="fas fa-search"></i></span>
+                    </div>
+                    <div contenteditable="true" class="form-control frame"><span class="badge badge-pill badge-warning">Collection</span></div>
+                  </div>
+
+
+                  <form class="form-inline flex-nowrap">
+                    <span class="bagde badge-danger badge-pill mr-3">Free&nbsp;Plan</span>
                     <i class="fa fa-bell fa-lg text-info mr-3"></i>
                     <i class="fa fa-user-circle fa-3x"></i>
                   </form>
@@ -290,20 +299,17 @@
             </div>
 
             <div class="bs-component">
-              <div class="input-group input-group-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id=""><i class="fas fa-search"></i></span>
-                </div>
-                <div contenteditable="true" class="form-control frame"><span class="badge badge-pill badge-warning">Collection</span></div>
-              </div>
-            </div>
-
-            <div class="bs-component">
-              <div class="input-group input-group-sm">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id=""><strong>This Page:</strong></span>
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-table"></i>&nbsp;Table</button>
-                  <div class="dropdown-menu">
+              <form class="form-inline d-flex mt-4">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="">
+                      <strong>
+                        1.&nbsp;Select View
+                      </strong>
+                    </span>
+                  </div>
+                  <button class="btn btn-outline-gray-600 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-table"></i>&nbsp;Table</button>
+                  <div class="dropdown-menu text-secondary">
                     <a class="dropdown-item" href="#"><i class="fas fa-map-marker-alt"></i>&nbsp;Detail</a>
                     <a class="dropdown-item" href="#"><i class="fas fa-search"></i>&nbsp;Search</a>
                     <a class="dropdown-item" href="#"><i class="fas fa-table"></i>&nbsp;Table</a>
@@ -312,13 +318,19 @@
                     <a class="dropdown-item" href="#"><i class="fas fa-file-alt"></i>&nbsp;SmartDoc</a>
                   </div>
                 </div>
-                <input type="text" class="form-control" placeholder="Type a title of this page, save, and share with your colleagues...">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="button"><i class="fas fa-copy"></i></button>
-                  <button class="btn btn-primary" type="button"><i class="fas fa-save"></i></button>
-                  <button class="btn btn-primary" type="button">Share</button>
+                <i class="fas fa-arrow-circle-right mx-2 text-muted"></i>
+                <div class="input-group flex-fill">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id=""><strong>2.&nbsp;Set Title</strong></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Type a title of this page, save, and share with your colleagues...">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-copy"></i></button>
+                    <button class="btn btn-primary" type="button"><i class="fas fa-save"></i></button>
+                    <button class="btn btn-primary" type="button">Share</button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
 
           </div>
