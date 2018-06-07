@@ -49,6 +49,14 @@ body {
   }
 }
 
+.navbar-brand img {
+
+  &:hover {
+    transform: scale(1.4, 1.4);
+  }
+  transition: transform 0.15s ease-in-out;
+}
+
 // Buttons =====================================================================
 
 .btn:focus, .btn:active, .focus {
@@ -194,7 +202,6 @@ div[contenteditable="true"].form-control {
   }
 
   &:not(.frame):not(.user) {
-   // padding: 0.25rem;
 
     &::before {
       font-family: FontAwesome;
@@ -322,6 +329,10 @@ div[contenteditable="true"].form-control {
   color: $black;
 }
 
+.card-template {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 // Tabs ========================================================================
 
 ul.nav-tabs {
@@ -352,3 +363,42 @@ ul.nav-tabs {
   }
 }
 
+.list-group.list-group-naked {
+
+  a {
+    color: $primary !important;
+    border-right: 4px solid transparent;
+    outline: 0;
+
+    &:active, &:focus {
+      background: transparent;
+    }
+
+    &:hover:not(.active) {
+      background: transparent;
+      border-right: 4px solid $gray-400;
+    }
+
+    &.active {
+      color: $secondary !important;
+      background: transparent;
+      border-right: 4px solid $primary;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $gray-500;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:not(:first-child) {
+      border-top: 1px solid $gray-500;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+}

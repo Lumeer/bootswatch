@@ -9472,6 +9472,18 @@ body {
   background: #fff !important;
 }
 
+.navbar-brand img {
+  -webkit-transition: -webkit-transform 0.15s ease-in-out;
+  transition: -webkit-transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+}
+
+.navbar-brand img:hover {
+  -webkit-transform: scale(1.4, 1.4);
+          transform: scale(1.4, 1.4);
+}
+
 .btn:focus, .btn:active, .focus {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -9725,6 +9737,11 @@ div[contenteditable="true"].form-control.user.attribute {
   color: #000;
 }
 
+.card-template {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 ul.nav-tabs {
   border-bottom: 1px solid #dee2e6;
 }
@@ -9749,4 +9766,41 @@ ul.nav-tabs .nav-link {
   border-left: none;
   border-right: none;
   border-bottom: 3px solid transparent;
+}
+
+.list-group.list-group-naked a {
+  color: #18BC9C !important;
+  border-right: 4px solid transparent;
+  outline: 0;
+}
+
+.list-group.list-group-naked a:active, .list-group.list-group-naked a:focus {
+  background: transparent;
+}
+
+.list-group.list-group-naked a:hover:not(.active) {
+  background: transparent;
+  border-right: 4px solid #ced4da;
+}
+
+.list-group.list-group-naked a.active {
+  color: #2C3E50 !important;
+  background: transparent;
+  border-right: 4px solid #18BC9C;
+}
+
+.list-group.list-group-naked a:not(:last-child) {
+  border-bottom: 1px solid #b4bcc2;
+}
+
+.list-group.list-group-naked a:last-child {
+  border-bottom: none;
+}
+
+.list-group.list-group-naked a:not(:first-child) {
+  border-top: 1px solid #b4bcc2;
+}
+
+.list-group.list-group-naked a:first-child {
+  border-top: none;
 }
