@@ -1,0 +1,334 @@
+// Flatly 4.1.1
+// Bootswatch
+
+
+// Variables ===================================================================
+
+$web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic" !default;
+@import url($web-font-path);
+
+body {
+  color: $secondary !important;
+}
+
+// Navbar =======================================================================
+
+.bg-primary {
+  .navbar-nav .active > .nav-link {
+    color: $secondary !important;
+  }
+}
+
+.bg-dark {
+  background-color: $secondary !important;
+  &.navbar-dark .navbar-nav {
+    .nav-link:focus,
+    .nav-link:hover,
+    .active > .nav-link {
+      color: $primary !important;
+    }
+  }
+}
+
+.navbar-triangle {
+
+  .nav-link {
+    display: block;
+    padding: 15px !important;
+    background:url('../../_assets/img/crumbs.gif') no-repeat right center;
+  }
+
+
+  .nav-item {
+    background: $white !important;
+  }
+
+  .nav-item:last-child .nav-link {
+    background: $white !important;
+    //background: url('../../_assets/img/crumbs-end.gif') no-repeat right center !important;
+  }
+}
+
+// Buttons =====================================================================
+
+.btn:focus, .btn:active, .focus {
+  box-shadow: none !important;
+}
+
+.btn {
+
+  &-secondary:hover {
+    border-color: lighten($secondary, 15%);
+    background-color: lighten($secondary, 15%);
+  }
+
+}
+
+// Typography ==================================================================
+
+.text-attribute {
+  font-style: italic;
+  font-weight: bold;
+  color: $gray-600;
+}
+
+.text-attribute.bg-dark {
+  color: $gray-300;
+
+}
+.bg-dark > .text-attribute {
+  color: $gray-300;
+}
+
+.dropdown-item:hover .text-primary {
+  color: $white !important;
+}
+
+// Tables ======================================================================
+
+.table {
+
+  .thead-dark th {
+    background-color: $primary;
+  }
+
+  &-success,
+  &-info,
+  &-warning,
+  &-danger {
+    color: #fff;
+  }
+
+  &-success {
+    &, > th, > td {
+      background-color: $success;
+    }
+  }
+
+  &-info {
+    &, > th, > td {
+      background-color: $info;
+    }
+  }
+
+  &-danger {
+    &, > th, > td {
+      background-color: $danger;
+    }
+  }
+
+  &-warning {
+    &, > th, > td {
+      background-color: $warning;
+    }
+  }
+
+  &-hover {
+
+    .table-success:hover {
+      &, > th, > td {
+        background-color: darken($success, 5%);
+      }
+    }
+
+    .table-info:hover {
+      &, > th, > td {
+        background-color: darken($info, 5%);
+      }
+    }
+
+    .table-danger:hover {
+      &, > th, > td {
+        background-color: darken($danger, 5%);
+      }
+    }
+
+    .table-warning:hover {
+      &, > th, > td {
+        background-color: darken($warning, 5%);
+      }
+    }
+
+  }
+}
+
+// Forms =======================================================================
+
+input, .form-control, .custom-control-input, input, textarea, select, .custom-file-input {
+
+  &:focus, &:active {
+    box-shadow: none !important;
+  }
+}
+
+.form-control, .custom-file-label {
+  box-shadow: none !important;
+}
+
+.custom-control-label {
+  &::before, &::after {
+    box-shadow: none !important;
+  }
+}
+
+
+input::placeholder, .custom-file-label {
+  font-style: italic;
+}
+
+input, textarea, select {
+  color: $secondary !important;
+}
+
+div[contenteditable="true"].form-control {
+  color: $secondary;
+  outline: 0;
+
+  &:not(.frame) {
+    border: 1px solid transparent;
+
+  }
+
+  &:not(.frame):not(.user) {
+   // padding: 0.25rem;
+
+    &::before {
+      font-family: FontAwesome;
+      content: "\f040";
+      font-style: normal;
+      font-weight: normal;
+      padding-right: 0.25rem;
+      color: $primary;
+      font-size: 75%;
+    }
+  }
+
+  transition:border .15s ease-in;
+
+  &.placeholder {
+    font-style: italic;
+    color: $gray-600;
+  }
+
+  &:active, &:focus, &.user:hover {
+    border: 1px solid $gray-400;
+  }
+
+  &.user.attribute {
+    font-style: italic;
+    font-weight: bold;
+    color: $gray-600;
+  }
+}
+
+// Navs ========================================================================
+
+.nav-tabs {
+  .nav-link.active,
+  .nav-link.active:focus,
+  .nav-link.active:hover,
+  .nav-item.open .nav-link,
+  .nav-item.open .nav-link:focus,
+  .nav-item.open .nav-link:hover {
+    color: $primary;
+  }
+}
+
+.nav-link {
+  &:focus, &:active {
+    outline: 0;
+  }
+}
+
+.pagination {
+  a:hover {
+    text-decoration: none;
+  }
+
+  .disabled > .page-link {
+    opacity: 0.65;
+  }
+}
+
+// Indicators ==================================================================
+
+.close {
+  text-decoration: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.badge {
+  &-secondary,
+  &-warning {
+    color: #fff;
+  }
+}
+
+
+.alert {
+  border: none;
+  color: $white;
+
+  a,
+  .alert-link {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      background-color: $value;
+    }
+  }
+
+  &-light {
+    &,
+    & a,
+    & .alert-link {
+      color: $body-color;
+    }
+  }
+}
+
+// Progress bars ===============================================================
+
+// Containers ==================================================================
+.modal .close{
+  color: $black;
+}
+
+// Tabs ========================================================================
+
+ul.nav-tabs {
+  border-bottom: 1px solid $gray-300;
+
+  .nav-link {
+    &:focus, &:active {
+      outline: 0;
+    }
+  }
+
+  .nav-item.show .nav-link, .nav-link.active {
+    color: $secondary;
+    background-color: #fff;
+    border-color: $primary;
+    outline: 0;
+
+    &:focus, &:active {
+      color: $secondary;
+    }
+  }
+
+  .nav-link {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid transparent;
+  }
+}
+

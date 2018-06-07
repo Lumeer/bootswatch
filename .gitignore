@@ -6,3 +6,4 @@ _site
 .sass-cache/
 .DS_Storedocs/4/cerulean/bootstrap*
 docs/4/**/bootstrap*
+*.iml
